@@ -1,0 +1,9 @@
+/* Box shadow effect for the blog preview card */
+.box_shadow {
+  box-shadow: 8px 8px black; /* Default box shadow */
+}
+
+/* Enhanced box shadow effect for hover state */
+.hover_box_shadow {
+  box-shadow: 20px 20px black; /* Larger box shadow on hover */
+}

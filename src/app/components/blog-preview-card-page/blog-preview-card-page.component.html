@@ -1,0 +1,26 @@
+<!-- Main container centered both vertically and horizontally with full screen height -->
+<main class="flex justify-center items-center h-screen w-full overflow-x-hidden overflow-y-auto bg-Yellow">
+  <!-- Container for the blog preview card, centered with responsive design for different screens -->
+  <div class="flex justify-center items-center h-auto w-auto landscape:m-auto landscape:p-10">
+    <!-- Blog preview card with styling and dynamic hover effect -->
+    <div class="flex flex-col justify-center items-start font-Figtree bg-White h-auto w-96 p-6 rounded-[20px] border-solid border-2 border-Black transition-all ease-in-out duration-100 Large_Mobile_Design:w-[327px] Small_Mobile_Design:w-64 Small_Mobile_Design:p-4" [class]="hovering_text ? 'hover_box_shadow' : 'box_shadow'">
+      <!-- Illustration image for the blog -->
+      <img [src]="illustraion_image_path_link" [alt]="illustration_image_description" class="h-full w-full rounded-[10px]" />
+      <!-- Container for the blog type label -->
+      <div class="bg-Yellow flex justify-center items-center h-[29px] w-[82px] rounded-[4px] mt-6 Small_Mobile_Design:h-6 Small_Mobile_Design:w-16 Small_Mobile_Design:mt-4">
+        <p class="text-sm text-Black font-bold Small_Mobile_Design:text-xs">{{blog_type_name}}</p>
+      </div>
+      <!-- Displaying the publication status and formatted date -->
+      <p class="text-sm text-Black font-semibold my-3 Small_Mobile_Design:text-xs Small_Mobile_Design:my-2">{{is_publish}} {{formattedDate}}</p>
+      <!-- Blog title with hover effect to change text color -->
+      <h1 class="text-2xl text-Black font-extrabold cursor-pointer hover:text-Yellow Large_Mobile_Design:text-xl Small_Mobile_Design:text-lg" (mouseenter)="hover_text()" (mouseleave)="hover_text()">{{title}}</h1>
+      <!-- Blog description text -->
+      <p class="text-base text-Grey font-semibold mt-3 Large_Mobile_Design:text-sm Small_Mobile_Design:text-xs Small_Mobile_Design:mt-2">{{description}}</p>
+      <!-- Container for the avatar image and author's name -->
+      <div class="flex justify-center items-center gap-3 mt-6 Small_Mobile_Design:mt-4">
+        <img [src]="avatar_image_path_link" [alt]="avatar_image_description" class="h-8 w-8 rounded-full Small_Mobile_Design:h-7 Small_Mobile_Design:w-7" />
+        <p class="text-sm text-Black font-extrabold Small_Mobile_Design:text-xs">{{avatar_full_name}}</p>
+      </div>
+    </div>
+  </div>
+</main>
